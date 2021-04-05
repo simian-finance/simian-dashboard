@@ -21,10 +21,10 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const actions: ActionTree<State, State> & Actions = {
   async [ActionTypes.FetchTokenInfo]({ commit }) {
-    commit(MutationType.SetLoading, true)
+    commit(MutationType.setLoading, true)
 
     await sleep(1000)
 
-    commit(MutationType.SetLoading, false)
+    commit(MutationType.setLoading, false)
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Token Info Here</h1>
+    <h1>Home</h1>
   </div>
 </template>
 
@@ -8,5 +8,4 @@
 export default {}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

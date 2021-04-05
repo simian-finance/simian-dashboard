@@ -5,15 +5,20 @@ import { MutationTree } from 'vuex'
 import { State } from '@/store/state'
 
 export enum MutationType {
-  SetLoading = 'SET_LOADING',
+  setLoading = 'setLoading',
+  toggleDrawerState = 'toggleDrawerState',
 }
 
 export type Mutations = {
-  [MutationType.SetLoading](state: State, value: boolean): void
+  [MutationType.setLoading](state: State, value: boolean): void
+  [MutationType.toggleDrawerState](state: State, value: boolean): void
 }
 
 export const mutations: MutationTree<State> & Mutations = {
-  [MutationType.SetLoading](state, value) {
+  [MutationType.setLoading](state, value) {
     state.isLoading = value
+  },
+  [MutationType.toggleDrawerState](state, data) {
+    state.drawerState = data
   },
 }

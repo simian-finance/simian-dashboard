@@ -1,16 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Token from '../views/Token.vue'
+import { routes } from '@/router/routes'
 
 Vue.use(VueRouter)
-
-const routes: Array<RouteConfig> = [
-  {
-    name: 'Token',
-    path: '/token',
-    component: Token,
-  },
-]
 
 const router = new VueRouter({
   routes,

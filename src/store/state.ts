@@ -14,11 +14,13 @@ export type TokenState = {
 }
 
 export type State = {
+  drawerState: boolean
   isLoading: boolean
   token: TokenState
 }
 
 export const state: State = {
+  drawerState: false,
   isLoading: false,
   token: {
     name: '?',

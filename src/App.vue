@@ -1,22 +1,32 @@
 <template>
-  <div class="app">
-    <header>
-      <NavBar />
-    </header>
-    <div class="container">
-      <router-view />
-    </div>
-  </div>
+  <v-app :style="{ background: $vuetify.theme.themes[theme].background }">
+    <NavDrawer />
+    <NavBarVue />
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <v-container style="height: 1500px">
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import NavBar from './components/NavBar.vue'
+import NavBarVue from './components/NavBarVue.vue'
+import NavDrawer from './components/NavDrawer.vue'
 
 export default Vue.extend({
   name: 'App',
+  computed: {
+    theme() {
+      return this.$vuetify.theme.dark ? 'dark' : 'light'
+    },
+  },
   components: {
-    NavBar,
+    NavDrawer,
+    NavBarVue,
   },
 
   data: () => ({
@@ -26,26 +36,8 @@ export default Vue.extend({
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #2c1459;
-  font-family: 'Barlow', sans-serif;
-  font-size: 1.1em;
-}
-
-header {
-  width: 100vw;
-  background-color: #2c1459;
-  padding: 16px;
-}
-
-.container {
-  margin: 64px;
-  padding: 0;
+h1 {
+  color: black;
+  font-size: 1.8em;
 }
 </style>
