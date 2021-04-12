@@ -7,6 +7,8 @@ import { State } from '@/store/state'
 import axios from 'axios'
 
 const dashboardUrl = 'https://api.thegraph.com/subgraphs/name/simian-finance/simian-finance'
+const coingeckoUrl = 'https://api.coingecko.com/api/v3'
+const simianFinance = 'simian-finance'
 
 export enum ActionTypes {
   FetchTokenInfo = 'FETCH_TOKEN_INFO',
@@ -44,8 +46,18 @@ export const actions: ActionTree<State, State> & Actions = {
       variables: null,
     })
     const tokenData = response.data.data.tokens[0]
-    tokenData['remainingSupply'] = Number(tokenData['remainingSupply']).toFixed(2)
-    tokenData['totalBurned'] = Number(tokenData['totalBurned']).toFixed(2)
+    tokenData.totalSupply = Number(tokenData.totalSupply)
+    tokenData.remainingSupply = Number(tokenData.remainingSupply).toFixed(2)
+    tokenData.totalBurned = Number(tokenData.totalBurned).toFixed(2)
+
+    const responsePrice = await axios.get(`${coingeckoUrl}/simple/price`, {
+      params: {
+        ids: simianFinance,
+        vs_currencies: 'usd',
+      },
+    })
+    tokenData.currentPrice = responsePrice.data[simianFinance]['usd']
+    tokenData.marketCap = Number(tokenData.totalSupply * tokenData.currentPrice).toFixed(2)
 
     commit(MutationType.setTokenState, tokenData)
 

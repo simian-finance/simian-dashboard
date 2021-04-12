@@ -44,6 +44,14 @@ export default Vue.extend({
           name: 'Total holders',
           key: 'totalHolders',
         },
+        {
+          name: 'Current price',
+          key: 'currentPrice',
+        },
+        {
+          name: 'Market cap',
+          key: 'marketCap',
+        },
       ],
     }
   },

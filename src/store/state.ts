@@ -11,6 +11,8 @@ export type TokenState = {
   totalHolders: number
   totalTransfers: number
   totalFees: number
+  currentPrice: number
+  marketCap: number
 }
 
 export type State = {
@@ -32,5 +34,7 @@ export const state: State = {
     totalHolders: 0,
     totalTransfers: 0,
     totalFees: 0,
+    currentPrice: 0,
+    marketCap: 0,
   },
 }
