@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app v-model="drawerState" color="secondary">
+  <v-navigation-drawer app dark v-model="drawerState" color="primary">
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title>Menu</v-list-item-title>

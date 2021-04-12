@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" src="../assets/logo.png">
+  <v-app-bar app dark color="primary" src="../assets/logo.png">
     <template v-slot:img="{ props }">
       <v-img v-bind="props" contain alt="Simian Holding" />
     </template>

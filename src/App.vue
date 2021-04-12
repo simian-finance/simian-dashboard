@@ -5,7 +5,7 @@
 
     <!-- Sizes your content based upon application components -->
     <v-main>
-      <v-container style="height: 1500px">
+      <v-container>
         <router-view />
       </v-container>
     </v-main>
@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import NavBarVue from './components/NavBarVue.vue'
+import NavBarVue from './components/NavBar.vue'
 import NavDrawer from './components/NavDrawer.vue'
 
 export default Vue.extend({
@@ -35,9 +35,4 @@ export default Vue.extend({
 })
 </script>
 
-<style>
-h1 {
-  color: black;
-  font-size: 1.8em;
-}
-</style>
+<style></style>
