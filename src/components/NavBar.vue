@@ -9,14 +9,14 @@
     <v-spacer></v-spacer>
 
     <!-- Icons-->
-    <v-token-items class="hidden-sm-and-down">
+    <v-item-group class="hidden-sm-and-down">
       <v-btn icon href="https://t.me/simianfinance">
         <v-icon>mdi-telegram</v-icon>
       </v-btn>
       <v-btn icon href="https://github.com/orgs/simian-finance/">
         <v-icon>mdi-github</v-icon>
       </v-btn>
-    </v-token-items>
+    </v-item-group>
 
     <!-- Tabs-->
     <template v-slot:extension v-if="!$vuetify.breakpoint.xsOnly">
